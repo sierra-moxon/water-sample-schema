@@ -1,12 +1,11 @@
 type BioSample
   {
     id: Uriorcurie!
-    name: String
-    description: String
-    primaryEmail: String
-    birthDate: Date
-    ageInYears: Integer
-    vitalStatus: PersonStatus
+    depth: Float
+    sampleType: Uriorcurie
+    latitude: Float
+    longitude: Float
+    bacteria: [Uriorcurie]
   }
 
 type BioSampleCollection
@@ -14,10 +13,8 @@ type BioSampleCollection
     entries: [BioSample]
   }
 
-type NamedThing
+interface NamedThing
   {
     id: Uriorcurie!
-    name: String
-    description: String
   }
 

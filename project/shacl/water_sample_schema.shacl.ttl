@@ -1,4 +1,3 @@
-@prefix PATO: <http://purl.obolibrary.org/obo/PATO_> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix schema1: <http://schema.org/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
@@ -6,23 +5,13 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 schema1:Thing a sh:NodeShape ;
-    sh:closed true ;
+    sh:closed false ;
     sh:description "A generic grouping for any identifiable entity" ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:datatype xsd:string ;
-            sh:description "A human-readable name for a thing" ;
-            sh:maxCount 1 ;
-            sh:order 1 ;
-            sh:path schema1:name ],
-        [ sh:description "A unique identifier for a thing" ;
+    sh:property [ sh:description "A unique identifier for a thing" ;
             sh:maxCount 1 ;
             sh:order 0 ;
-            sh:path schema1:identifier ],
-        [ sh:datatype xsd:string ;
-            sh:description "A human-readable description for a thing" ;
-            sh:maxCount 1 ;
-            sh:order 2 ;
-            sh:path schema1:description ] ;
+            sh:path schema1:identifier ] ;
     sh:targetClass schema1:Thing .
 
 water_sample_schema:BioSampleCollection a sh:NodeShape ;
@@ -37,43 +26,37 @@ water_sample_schema:BioSampleCollection a sh:NodeShape ;
 
 water_sample_schema:BioSample a sh:NodeShape ;
     sh:closed true ;
-    sh:description "Represents a BioSample" ;
+    sh:description "A hypothetical collection of attributes that represent a sample of water from a specific  location and depth with associated bacterial composition." ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:description "living or dead status" ;
-            sh:in ( PATO:0001421 PATO:0001422 "UNKNOWN" ) ;
-            sh:maxCount 1 ;
-            sh:order 3 ;
-            sh:path water_sample_schema:vital_status ],
-        [ sh:datatype xsd:date ;
-            sh:description "Date on which a person is born" ;
-            sh:maxCount 1 ;
-            sh:order 1 ;
-            sh:path schema1:birthDate ],
-        [ sh:datatype xsd:integer ;
-            sh:description "Number of years since birth" ;
+    sh:property [ sh:datatype xsd:float ;
+            sh:description "The latitude of the water sample" ;
             sh:maxCount 1 ;
             sh:order 2 ;
-            sh:path water_sample_schema:age_in_years ],
-        [ sh:datatype xsd:string ;
-            sh:description "A human-readable name for a thing" ;
+            sh:path water_sample_schema:latitude ;
+            sh:pattern "^[-+]?([1-8]?\\d(\\.\\d+)?|90(\\.0+)?)$" ],
+        [ sh:datatype xsd:float ;
+            sh:description "The longitude of the water sample" ;
             sh:maxCount 1 ;
-            sh:order 5 ;
-            sh:path schema1:name ],
-        [ sh:datatype xsd:string ;
-            sh:description "A human-readable description for a thing" ;
-            sh:maxCount 1 ;
-            sh:order 6 ;
-            sh:path schema1:description ],
+            sh:order 3 ;
+            sh:path water_sample_schema:longitude ;
+            sh:pattern "^[-+]?(180(\\.0+)?|((1[0-7]\\d)|([1-9]?\\d))(\\.\\d+)?)$" ],
         [ sh:description "A unique identifier for a thing" ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
-            sh:order 4 ;
+            sh:order 5 ;
             sh:path schema1:identifier ],
-        [ sh:datatype xsd:string ;
-            sh:description "The main email address of a person" ;
+        [ sh:description "The type of sample" ;
+            sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path water_sample_schema:sample_type ],
+        [ sh:datatype xsd:float ;
+            sh:description "The depth of the water sample in centimeters" ;
             sh:maxCount 1 ;
             sh:order 0 ;
-            sh:path schema1:email ;
-            sh:pattern "^\\S+@[\\S+\\.]+\\S+" ] ;
+            sh:path water_sample_schema:depth ],
+        [ sh:description "The bacteria, represented by a NCBITaxon identifier, present in a sample" ;
+            sh:order 4 ;
+            sh:path water_sample_schema:bacteria ;
+            sh:pattern "^NCBITaxon:\\d+$" ] ;
     sh:targetClass water_sample_schema:BioSample .
 

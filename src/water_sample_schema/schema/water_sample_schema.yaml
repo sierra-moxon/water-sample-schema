@@ -1,5 +1,5 @@
 ---
-id: https://w3id.org/sierra-moxon/oregon-water-samples
+id: https://w3id.org/sierra-moxon/water-sample-schema
 name: water-sample-schema
 title: water-sample-schema
 description: Sample LinkML project setup for 2024 paper figures
@@ -8,7 +8,7 @@ see_also:
   - https://sierra-moxon.github.io/water-sample-schema
 
 prefixes:
-  oregon_water_samples: https://w3id.org/sierra-moxon/water-sample-schema/
+  water_sample_schema: https://w3id.org/sierra-moxon/water-sample-schema/
   linkml: https://w3id.org/linkml/
   biolink: https://w3id.org/biolink/
   schema: http://schema.org/
@@ -43,7 +43,7 @@ classes:
       - bacteria
 
   BioSampleCollection:
-    class_uri: oregon_water_samples:BioSampleCollection
+    class_uri: water_sample_schema:BioSampleCollection
     tree_root: true
     description: >-
       A holder for BioSample objects
@@ -61,25 +61,25 @@ slots:
     description: A unique identifier for a thing
 
   depth:
-    slot_uri: oregon_water_samples:depth
+    slot_uri: water_sample_schema:depth
     range: float
     description: The depth of the water sample in centimeters
   latitude:
-    slot_uri: oregon_water_samples:latitude
+    slot_uri: water_sample_schema:latitude
     range: float
     pattern: ^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?)$
     description: The latitude of the water sample
   longitude:
-    slot_uri: oregon_water_samples:longitude
+    slot_uri: water_sample_schema:longitude
     range: float
     pattern: ^[-+]?(180(\.0+)?|((1[0-7]\d)|([1-9]?\d))(\.\d+)?)$
     description: The longitude of the water sample
   sample_type:
-    slot_uri: oregon_water_samples:sample_type
+    slot_uri: water_sample_schema:sample_type
     range: uriorcurie
     description: The type of sample
   bacteria:
-    slot_uri: oregon_water_samples:bacteria
+    slot_uri: water_sample_schema:bacteria
     range: uriorcurie
     pattern: ^NCBITaxon:\d+$
     description: The bacteria, represented by a NCBITaxon identifier, present in a sample

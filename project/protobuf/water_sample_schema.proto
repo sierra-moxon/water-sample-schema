@@ -1,23 +1,15 @@
-// Represents a BioSample
+// A hypothetical collection of attributes that represent a sample of water from a specific  location and depth with associated bacterial composition.
 message BioSample
  {
   uriorcurie id = 0
-  string name = 0
-  string description = 0
-  string primaryEmail = 0
-  date birthDate = 0
-  integer ageInYears = 0
-  personStatus vitalStatus = 0
+  float depth = 0
+  uriorcurie sampleType = 0
+  float latitude = 0
+  float longitude = 0
+ repeated  uriorcurie bacteria = 0
  }
 // A holder for BioSample objects
 message BioSampleCollection
  {
  repeated  bioSample entries = 0
- }
-// A generic grouping for any identifiable entity
-message NamedThing
- {
-  uriorcurie id = 0
-  string name = 0
-  string description = 0
  }
