@@ -5,7 +5,7 @@ from linkml_runtime.dumpers import yaml_dumper
 from linkml_map.session import Session
 # Path to your YAML file
 from pprint import pprint
-schema_path = Path("../schema/water_sample_schema.yaml")
+schema_path = Path("../schema/environmental_sample_schema.yaml")
 
 lmg = LinkmlGenerator(schema_path)
 schema_definition = lmg.schema

@@ -420,13 +420,13 @@
     }
   ],
   "metamodel_version": "1.7.0",
-  "source_file": "water_sample_schema.yaml",
+  "source_file": "environmental_sample_schema.yaml",
   "source_file_date": "2025-03-25T11:08:14",
   "source_file_size": 1375,
-  "generation_date": "2025-03-25T11:09:04",
+  "generation_date": "2025-03-25T11:13:27",
   "@type": "SchemaDefinition",
   "@context": [
-    "project/jsonld/water_sample_schema.context.jsonld",
+    "project/jsonld/environmental_sample_schema.context.jsonld",
     "https://w3id.org/linkml/types.context.jsonld",
     {
       "@base": "https://w3id.org/water-sample-schema/"

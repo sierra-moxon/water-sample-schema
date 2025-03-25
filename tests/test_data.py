@@ -4,7 +4,7 @@ import glob
 import unittest
 
 from linkml_runtime.loaders import yaml_loader
-from water_sample_schema.datamodel.water_sample_schema import BioSampleCollection
+from environmental_sample_schema.datamodel.environmental_sample_schema import BioSampleCollection
 
 ROOT = os.path.join(os.path.dirname(__file__), '..')
 DATA_DIR = os.path.join(ROOT, "src", "data", "examples")

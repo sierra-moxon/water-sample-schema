@@ -13,16 +13,16 @@ environmental_sample_schema:EnvironmentalSample a sh:NodeShape ;
             sh:order 0 ;
             sh:path environmental_sample_schema:analysis_type ],
         [ sh:datatype xsd:float ;
-            sh:description "The longitude of the sample" ;
-            sh:maxCount 1 ;
-            sh:order 2 ;
-            sh:path environmental_sample_schema:longitude ;
-            sh:pattern "^[-+]?(180(\\.0+)?|((1[0-7]\\d)|([1-9]?\\d))(\\.\\d+)?)$" ],
-        [ sh:datatype xsd:float ;
             sh:description "The latitude of the sample" ;
             sh:maxCount 1 ;
             sh:order 1 ;
             sh:path environmental_sample_schema:latitude ;
-            sh:pattern "^[-+]?([1-8]?\\d(\\.\\d+)?|90(\\.0+)?)$" ] ;
+            sh:pattern "^[-+]?([1-8]?\\d(\\.\\d+)?|90(\\.0+)?)$" ],
+        [ sh:datatype xsd:float ;
+            sh:description "The longitude of the sample" ;
+            sh:maxCount 1 ;
+            sh:order 2 ;
+            sh:path environmental_sample_schema:longitude ;
+            sh:pattern "^[-+]?(180(\\.0+)?|((1[0-7]\\d)|([1-9]?\\d))(\\.\\d+)?)$" ] ;
     sh:targetClass environmental_sample_schema:EnvironmentalSample .
 

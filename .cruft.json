@@ -5,9 +5,9 @@
   "context": {
     "cookiecutter": {
       "project_name": "water-sample-schema",
-      "__project_slug": "water_sample_schema",
+      "__project_slug": "environmental_sample_schema",
       "github_org": "sierra-moxon",
-      "__source_path": "src/water_sample_schema/schema/water_sample_schema.yaml",
+      "__source_path": "src/environmental_sample_schema/schema/environmental_sample_schema.yaml",
       "project_description": "Sample LinkML project setup for 2024 paper figures",
       "full_name": "Sierra Moxon",
       "email": "smoxon@lbl.gov",

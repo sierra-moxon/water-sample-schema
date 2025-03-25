@@ -1,11 +1,11 @@
 [tool.poetry]
-name = "water_sample_schema"
+name = "environmental_sample_schema"
 version = "0.1.0"
 description = "Sample LinkML project setup for 2024 paper figures"
 authors = ["Sierra Moxon <smoxon@lbl.gov>"]
 license = "MIT"
 readme = "README.md"
-include = ["README.md", "src/water_sample_schema/schema", "project"]
+include = ["README.md", "src/environmental_sample_schema/schema", "project"]
 
 [tool.poetry.dependencies]
 python = "^3.9"

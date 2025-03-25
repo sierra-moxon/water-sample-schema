@@ -1,7 +1,7 @@
 # Built from:
 # https://docs.github.com/en/actions/guides/building-and-testing-python
 ---
-name: Build and test water_sample_schema
+name: Build and test environmental_sample_schema
 
 on: [pull_request]
 

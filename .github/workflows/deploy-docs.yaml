@@ -1,5 +1,5 @@
 ---
-name: Auto-deployment of water_sample_schema Documentation
+name: Auto-deployment of environmental_sample_schema Documentation
 on:
   push:
     branches: [main]

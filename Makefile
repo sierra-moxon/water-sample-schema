@@ -170,7 +170,7 @@ examples/%.ttl: src/data/examples/%.yaml
 
 test-examples: examples/output
 
-examples/output: src/water_sample_schema/schema/water_sample_schema.yaml
+examples/output: src/environmental_sample_schema
 	mkdir -p $@
 	$(RUN) linkml-run-examples \
 		--output-formats json \

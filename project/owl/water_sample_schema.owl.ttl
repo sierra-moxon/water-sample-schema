@@ -11,6 +11,21 @@ environmental_sample_schema:EnvironmentalSample a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "EnvironmentalSample" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty environmental_sample_schema:latitude ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty environmental_sample_schema:analysis_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty environmental_sample_schema:longitude ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty environmental_sample_schema:longitude ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom environmental_sample_schema:AnalysisTypeEnum ;
+            owl:onProperty environmental_sample_schema:analysis_type ],
+        [ a owl:Restriction ;
             owl:allValuesFrom [ a rdfs:Datatype ;
                     owl:intersectionOf ( linkml:Float [ a rdfs:Datatype ;
                                 owl:onDatatype xsd:string ;
@@ -24,24 +39,9 @@ environmental_sample_schema:EnvironmentalSample a owl:Class,
             owl:onProperty environmental_sample_schema:latitude ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty environmental_sample_schema:analysis_type ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty environmental_sample_schema:longitude ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty environmental_sample_schema:analysis_type ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty environmental_sample_schema:latitude ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty environmental_sample_schema:latitude ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty environmental_sample_schema:longitude ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom environmental_sample_schema:AnalysisTypeEnum ;
             owl:onProperty environmental_sample_schema:analysis_type ] ;
     skos:definition "A hypothetical collection of attributes that represent a sample from a specific  location." ;
     skos:exactMatch environmental_sample_schema:EnvironmentalSample ;

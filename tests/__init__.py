@@ -1,1 +1,1 @@
-"""Tests for water-sample-schema."""
+"""Tests for environmental-sample-schema."""

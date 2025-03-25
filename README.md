@@ -11,10 +11,10 @@ Sample LinkML project setup for 2024 paper figures
 * [examples/](examples/) - example data
 * [project/](project/) - project files (do not edit these)
 * [src/](src/) - source files (edit these)
-  * [water_sample_schema](src/water_sample_schema)
-    * [schema](src/water_sample_schema/schema) -- LinkML schema
+  * [environmental_sample_schema](src/environmental_sample_schema)
+    * [schema](src/environmental_sample_schema/schema) -- LinkML schema
       (edit this)
-    * [datamodel](src/water_sample_schema/datamodel) -- generated
+    * [datamodel](src/environmental_sample_schema/datamodel) -- generated
       Python datamodel
 * [tests/](tests/) - Python tests
 

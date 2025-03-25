@@ -1,5 +1,5 @@
-# Auto generated from water_sample_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-03-25T11:09:04
+# Auto generated from environmental_sample_schema.yaml by pythongen.py version: 0.0.1
+# Generation date: 2025-03-25T11:15:52
 # Schema: environmental-sample-schema
 #
 # id: https://w3id.org/environmental-sample-schema
