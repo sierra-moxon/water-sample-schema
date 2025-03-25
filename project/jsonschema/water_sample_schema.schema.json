@@ -1,133 +1,38 @@
 {
     "$defs": {
-        "BioSample": {
-            "additionalProperties": false,
-            "description": "A hypothetical collection of attributes that represent a sample of water from a specific  location and depth with associated bacterial composition.",
-            "properties": {
-                "bacteria": {
-                    "description": "The bacteria, represented by a NCBITaxon identifier, present in a sample",
-                    "items": {
-                        "pattern": "^NCBITaxon:\\d+$",
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "depth": {
-                    "description": "The depth of the water sample in centimeters",
-                    "type": "number"
-                },
-                "id": {
-                    "description": "A unique identifier for a thing",
-                    "type": "string"
-                },
-                "latitude": {
-                    "description": "The latitude of the water sample",
-                    "pattern": "^[-+]?([1-8]?\\d(\\.\\d+)?|90(\\.0+)?)$",
-                    "type": "number"
-                },
-                "longitude": {
-                    "description": "The longitude of the water sample",
-                    "pattern": "^[-+]?(180(\\.0+)?|((1[0-7]\\d)|([1-9]?\\d))(\\.\\d+)?)$",
-                    "type": "number"
-                },
-                "sample_type": {
-                    "description": "The type of sample",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "id"
-            ],
-            "title": "BioSample",
-            "type": "object"
-        },
-        "BioSampleCollection": {
-            "additionalProperties": false,
-            "description": "A holder for BioSample objects",
-            "properties": {
-                "entries": {
-                    "additionalProperties": {
-                        "anyOf": [
-                            {
-                                "$ref": "#/$defs/BioSample__identifier_optional"
-                            },
-                            {
-                                "type": "null"
-                            }
-                        ]
-                    },
-                    "type": "object"
-                }
-            },
-            "title": "BioSampleCollection",
-            "type": "object"
-        },
-        "BioSample__identifier_optional": {
-            "additionalProperties": false,
-            "description": "A hypothetical collection of attributes that represent a sample of water from a specific  location and depth with associated bacterial composition.",
-            "properties": {
-                "bacteria": {
-                    "description": "The bacteria, represented by a NCBITaxon identifier, present in a sample",
-                    "items": {
-                        "pattern": "^NCBITaxon:\\d+$",
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "depth": {
-                    "description": "The depth of the water sample in centimeters",
-                    "type": "number"
-                },
-                "id": {
-                    "description": "A unique identifier for a thing",
-                    "type": "string"
-                },
-                "latitude": {
-                    "description": "The latitude of the water sample",
-                    "pattern": "^[-+]?([1-8]?\\d(\\.\\d+)?|90(\\.0+)?)$",
-                    "type": "number"
-                },
-                "longitude": {
-                    "description": "The longitude of the water sample",
-                    "pattern": "^[-+]?(180(\\.0+)?|((1[0-7]\\d)|([1-9]?\\d))(\\.\\d+)?)$",
-                    "type": "number"
-                },
-                "sample_type": {
-                    "description": "The type of sample",
-                    "type": "string"
-                }
-            },
-            "required": [],
-            "title": "BioSample",
-            "type": "object"
-        },
-        "SampleTypeEnum": {
+        "AnalysisTypeEnum": {
             "description": "The type of sample",
-            "title": "SampleTypeEnum",
+            "title": "AnalysisTypeEnum",
             "type": "string"
+        },
+        "EnvironmentalSample": {
+            "additionalProperties": false,
+            "description": "A hypothetical collection of attributes that represent a sample from a specific  location.",
+            "properties": {
+                "analysis_type": {
+                    "$ref": "#/$defs/AnalysisTypeEnum",
+                    "description": "The type of sample"
+                },
+                "latitude": {
+                    "description": "The latitude of the sample",
+                    "pattern": "^[-+]?([1-8]?\\d(\\.\\d+)?|90(\\.0+)?)$",
+                    "type": "number"
+                },
+                "longitude": {
+                    "description": "The longitude of the sample",
+                    "pattern": "^[-+]?(180(\\.0+)?|((1[0-7]\\d)|([1-9]?\\d))(\\.\\d+)?)$",
+                    "type": "number"
+                }
+            },
+            "title": "EnvironmentalSample",
+            "type": "object"
         }
     },
-    "$id": "https://w3id.org/sierra-moxon/water-sample-schema",
+    "$id": "https://w3id.org/environmental-sample-schema",
     "$schema": "https://json-schema.org/draft/2019-09/schema",
     "additionalProperties": true,
-    "description": "A holder for BioSample objects",
     "metamodel_version": "1.7.0",
-    "properties": {
-        "entries": {
-            "additionalProperties": {
-                "anyOf": [
-                    {
-                        "$ref": "#/$defs/BioSample__identifier_optional"
-                    },
-                    {
-                        "type": "null"
-                    }
-                ]
-            },
-            "type": "object"
-        }
-    },
-    "title": "water-sample-schema",
+    "title": "environmental-sample-schema",
     "type": "object",
     "version": null
 }

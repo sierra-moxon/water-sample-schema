@@ -1,7 +1,11 @@
 # Example data object
 ---
-entries:
-  - id: example:BioSample001
-    name: foo bar
-    primary_email: foo.bar@example.com
-    age_in_years: 33
+biosamples:
+  - id: BioSample-001
+    depth: 10.0
+    latitude: 37.7749
+    longitude: -122.4194
+    sample_type: ENVO:01000254
+    bacteria:
+      - NCBITaxon:562
+      - NCBITaxon:3

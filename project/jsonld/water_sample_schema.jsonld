@@ -1,27 +1,20 @@
 {
-  "name": "water-sample-schema",
-  "description": "Sample LinkML project setup for 2024 paper figures",
-  "title": "water-sample-schema",
-  "see_also": [
-    "https://sierra-moxon.github.io/water-sample-schema"
-  ],
-  "id": "https://w3id.org/sierra-moxon/water-sample-schema",
+  "name": "environmental-sample-schema",
+  "description": "Environmental Sample LinkML project",
+  "title": "environmental-sample-schema",
+  "id": "https://w3id.org/environmental-sample-schema",
   "imports": [
     "linkml:types"
   ],
   "license": "MIT",
   "prefixes": [
     {
-      "prefix_prefix": "water_sample_schema",
-      "prefix_reference": "https://w3id.org/sierra-moxon/water-sample-schema/"
+      "prefix_prefix": "environmental_sample_schema",
+      "prefix_reference": "https://w3id.org/water-sample-schema/"
     },
     {
       "prefix_prefix": "linkml",
       "prefix_reference": "https://w3id.org/linkml/"
-    },
-    {
-      "prefix_prefix": "biolink",
-      "prefix_reference": "https://w3id.org/biolink/"
     },
     {
       "prefix_prefix": "schema",
@@ -32,7 +25,7 @@
       "prefix_reference": "https://example.org/"
     }
   ],
-  "default_prefix": "water_sample_schema",
+  "default_prefix": "environmental_sample_schema",
   "default_range": "string",
   "types": [
     {
@@ -346,10 +339,10 @@
   ],
   "enums": [
     {
-      "name": "SampleTypeEnum",
-      "definition_uri": "https://w3id.org/sierra-moxon/water-sample-schema/SampleTypeEnum",
+      "name": "AnalysisTypeEnum",
+      "definition_uri": "https://w3id.org/water-sample-schema/AnalysisTypeEnum",
       "description": "The type of sample",
-      "from_schema": "https://w3id.org/sierra-moxon/water-sample-schema",
+      "from_schema": "https://w3id.org/environmental-sample-schema",
       "reachable_from": {
         "source_ontology": "obo:envo"
       }
@@ -357,51 +350,33 @@
   ],
   "slots": [
     {
-      "name": "id",
-      "definition_uri": "https://w3id.org/sierra-moxon/water-sample-schema/id",
-      "description": "A unique identifier for a thing",
-      "from_schema": "https://w3id.org/sierra-moxon/water-sample-schema",
+      "name": "analysis_type",
+      "definition_uri": "https://w3id.org/water-sample-schema/analysis_type",
+      "description": "The type of sample",
+      "from_schema": "https://w3id.org/environmental-sample-schema",
       "mappings": [
-        "http://schema.org/identifier"
+        "https://w3id.org/water-sample-schema/analysis_type"
       ],
-      "slot_uri": "http://schema.org/identifier",
-      "identifier": true,
-      "owner": "NamedThing",
+      "slot_uri": "https://w3id.org/water-sample-schema/analysis_type",
+      "owner": "EnvironmentalSample",
       "domain_of": [
-        "NamedThing"
+        "EnvironmentalSample"
       ],
-      "range": "uriorcurie",
-      "required": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "depth",
-      "definition_uri": "https://w3id.org/sierra-moxon/water-sample-schema/depth",
-      "description": "The depth of the water sample in centimeters",
-      "from_schema": "https://w3id.org/sierra-moxon/water-sample-schema",
-      "mappings": [
-        "https://w3id.org/sierra-moxon/water-sample-schema/depth"
-      ],
-      "slot_uri": "https://w3id.org/sierra-moxon/water-sample-schema/depth",
-      "owner": "BioSample",
-      "domain_of": [
-        "BioSample"
-      ],
-      "range": "float",
+      "range": "AnalysisTypeEnum",
       "@type": "SlotDefinition"
     },
     {
       "name": "latitude",
-      "definition_uri": "https://w3id.org/sierra-moxon/water-sample-schema/latitude",
-      "description": "The latitude of the water sample",
-      "from_schema": "https://w3id.org/sierra-moxon/water-sample-schema",
+      "definition_uri": "https://w3id.org/water-sample-schema/latitude",
+      "description": "The latitude of the sample",
+      "from_schema": "https://w3id.org/environmental-sample-schema",
       "mappings": [
-        "https://w3id.org/sierra-moxon/water-sample-schema/latitude"
+        "https://w3id.org/water-sample-schema/latitude"
       ],
-      "slot_uri": "https://w3id.org/sierra-moxon/water-sample-schema/latitude",
-      "owner": "BioSample",
+      "slot_uri": "https://w3id.org/water-sample-schema/latitude",
+      "owner": "EnvironmentalSample",
       "domain_of": [
-        "BioSample"
+        "EnvironmentalSample"
       ],
       "range": "float",
       "pattern": "^[-+]?([1-8]?\\d(\\.\\d+)?|90(\\.0+)?)$",
@@ -409,145 +384,52 @@
     },
     {
       "name": "longitude",
-      "definition_uri": "https://w3id.org/sierra-moxon/water-sample-schema/longitude",
-      "description": "The longitude of the water sample",
-      "from_schema": "https://w3id.org/sierra-moxon/water-sample-schema",
+      "definition_uri": "https://w3id.org/water-sample-schema/longitude",
+      "description": "The longitude of the sample",
+      "from_schema": "https://w3id.org/environmental-sample-schema",
       "mappings": [
-        "https://w3id.org/sierra-moxon/water-sample-schema/longitude"
+        "https://w3id.org/water-sample-schema/longitude"
       ],
-      "slot_uri": "https://w3id.org/sierra-moxon/water-sample-schema/longitude",
-      "owner": "BioSample",
+      "slot_uri": "https://w3id.org/water-sample-schema/longitude",
+      "owner": "EnvironmentalSample",
       "domain_of": [
-        "BioSample"
+        "EnvironmentalSample"
       ],
       "range": "float",
       "pattern": "^[-+]?(180(\\.0+)?|((1[0-7]\\d)|([1-9]?\\d))(\\.\\d+)?)$",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "sample_type",
-      "definition_uri": "https://w3id.org/sierra-moxon/water-sample-schema/sample_type",
-      "description": "The type of sample",
-      "from_schema": "https://w3id.org/sierra-moxon/water-sample-schema",
-      "mappings": [
-        "https://w3id.org/sierra-moxon/water-sample-schema/sample_type"
-      ],
-      "slot_uri": "https://w3id.org/sierra-moxon/water-sample-schema/sample_type",
-      "owner": "BioSample",
-      "domain_of": [
-        "BioSample"
-      ],
-      "range": "uriorcurie",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "bacteria",
-      "definition_uri": "https://w3id.org/sierra-moxon/water-sample-schema/bacteria",
-      "description": "The bacteria, represented by a NCBITaxon identifier, present in a sample",
-      "from_schema": "https://w3id.org/sierra-moxon/water-sample-schema",
-      "mappings": [
-        "https://w3id.org/sierra-moxon/water-sample-schema/bacteria"
-      ],
-      "slot_uri": "https://w3id.org/sierra-moxon/water-sample-schema/bacteria",
-      "multivalued": true,
-      "owner": "BioSample",
-      "domain_of": [
-        "BioSample"
-      ],
-      "range": "uriorcurie",
-      "pattern": "^NCBITaxon:\\d+$",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "bioSampleCollection__entries",
-      "from_schema": "https://w3id.org/sierra-moxon/water-sample-schema",
-      "slot_uri": "https://w3id.org/sierra-moxon/water-sample-schema/entries",
-      "multivalued": true,
-      "alias": "entries",
-      "owner": "BioSampleCollection",
-      "domain_of": [
-        "BioSampleCollection"
-      ],
-      "range": "BioSample",
-      "inlined": true,
       "@type": "SlotDefinition"
     }
   ],
   "classes": [
     {
-      "name": "NamedThing",
-      "definition_uri": "https://w3id.org/sierra-moxon/water-sample-schema/NamedThing",
-      "description": "A generic grouping for any identifiable entity",
-      "from_schema": "https://w3id.org/sierra-moxon/water-sample-schema",
+      "name": "EnvironmentalSample",
+      "definition_uri": "https://w3id.org/water-sample-schema/EnvironmentalSample",
+      "description": "A hypothetical collection of attributes that represent a sample from a specific  location.",
+      "from_schema": "https://w3id.org/environmental-sample-schema",
       "mappings": [
-        "schema:Thing"
+        "environmental_sample_schema:EnvironmentalSample"
       ],
-      "abstract": true,
       "slots": [
-        "id"
-      ],
-      "slot_usage": {},
-      "class_uri": "http://schema.org/Thing",
-      "@type": "ClassDefinition"
-    },
-    {
-      "name": "BioSample",
-      "definition_uri": "https://w3id.org/sierra-moxon/water-sample-schema/BioSample",
-      "description": "A hypothetical collection of attributes that represent a sample of water from a specific  location and depth with associated bacterial composition.",
-      "from_schema": "https://w3id.org/sierra-moxon/water-sample-schema",
-      "mappings": [
-        "water_sample_schema:BioSample"
-      ],
-      "is_a": "NamedThing",
-      "slots": [
-        "id",
-        "depth",
-        "sample_type",
+        "analysis_type",
         "latitude",
-        "longitude",
-        "bacteria"
+        "longitude"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/sierra-moxon/water-sample-schema/BioSample",
-      "@type": "ClassDefinition"
-    },
-    {
-      "name": "BioSampleCollection",
-      "definition_uri": "https://w3id.org/sierra-moxon/water-sample-schema/BioSampleCollection",
-      "description": "A holder for BioSample objects",
-      "from_schema": "https://w3id.org/sierra-moxon/water-sample-schema",
-      "mappings": [
-        "water_sample_schema:BioSampleCollection"
-      ],
-      "slots": [
-        "bioSampleCollection__entries"
-      ],
-      "slot_usage": {},
-      "attributes": [
-        {
-          "name": "entries",
-          "multivalued": true,
-          "range": "BioSample",
-          "inlined": true,
-          "@type": "SlotDefinition"
-        }
-      ],
-      "class_uri": "https://w3id.org/sierra-moxon/water-sample-schema/BioSampleCollection",
-      "tree_root": true,
+      "class_uri": "https://w3id.org/water-sample-schema/EnvironmentalSample",
       "@type": "ClassDefinition"
     }
   ],
   "metamodel_version": "1.7.0",
   "source_file": "water_sample_schema.yaml",
-  "source_file_date": "2024-04-02T15:42:50",
-  "source_file_size": 2428,
-  "generation_date": "2024-04-02T15:43:06",
+  "source_file_date": "2025-03-25T11:08:14",
+  "source_file_size": 1375,
+  "generation_date": "2025-03-25T11:09:04",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/water_sample_schema.context.jsonld",
     "https://w3id.org/linkml/types.context.jsonld",
     {
-      "@base": "https://w3id.org/sierra-moxon/water-sample-schema/"
+      "@base": "https://w3id.org/water-sample-schema/"
     }
   ]
 }

@@ -1,62 +1,28 @@
+@prefix environmental_sample_schema: <https://w3id.org/water-sample-schema/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix schema1: <http://schema.org/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix water_sample_schema: <https://w3id.org/sierra-moxon/water-sample-schema/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-schema1:Thing a sh:NodeShape ;
-    sh:closed false ;
-    sh:description "A generic grouping for any identifiable entity" ;
+environmental_sample_schema:EnvironmentalSample a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "A hypothetical collection of attributes that represent a sample from a specific  location." ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:description "A unique identifier for a thing" ;
+    sh:property [ sh:description "The type of sample" ;
+            sh:in [ rdf:rest () ] ;
             sh:maxCount 1 ;
             sh:order 0 ;
-            sh:path schema1:identifier ] ;
-    sh:targetClass schema1:Thing .
-
-water_sample_schema:BioSampleCollection a sh:NodeShape ;
-    sh:closed true ;
-    sh:description "A holder for BioSample objects" ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:class water_sample_schema:BioSample ;
-            sh:nodeKind sh:IRI ;
-            sh:order 0 ;
-            sh:path water_sample_schema:entries ] ;
-    sh:targetClass water_sample_schema:BioSampleCollection .
-
-water_sample_schema:BioSample a sh:NodeShape ;
-    sh:closed true ;
-    sh:description "A hypothetical collection of attributes that represent a sample of water from a specific  location and depth with associated bacterial composition." ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:datatype xsd:float ;
-            sh:description "The latitude of the water sample" ;
+            sh:path environmental_sample_schema:analysis_type ],
+        [ sh:datatype xsd:float ;
+            sh:description "The longitude of the sample" ;
             sh:maxCount 1 ;
             sh:order 2 ;
-            sh:path water_sample_schema:latitude ;
-            sh:pattern "^[-+]?([1-8]?\\d(\\.\\d+)?|90(\\.0+)?)$" ],
-        [ sh:datatype xsd:float ;
-            sh:description "The longitude of the water sample" ;
-            sh:maxCount 1 ;
-            sh:order 3 ;
-            sh:path water_sample_schema:longitude ;
+            sh:path environmental_sample_schema:longitude ;
             sh:pattern "^[-+]?(180(\\.0+)?|((1[0-7]\\d)|([1-9]?\\d))(\\.\\d+)?)$" ],
-        [ sh:description "A unique identifier for a thing" ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 5 ;
-            sh:path schema1:identifier ],
-        [ sh:description "The type of sample" ;
+        [ sh:datatype xsd:float ;
+            sh:description "The latitude of the sample" ;
             sh:maxCount 1 ;
             sh:order 1 ;
-            sh:path water_sample_schema:sample_type ],
-        [ sh:datatype xsd:float ;
-            sh:description "The depth of the water sample in centimeters" ;
-            sh:maxCount 1 ;
-            sh:order 0 ;
-            sh:path water_sample_schema:depth ],
-        [ sh:description "The bacteria, represented by a NCBITaxon identifier, present in a sample" ;
-            sh:order 4 ;
-            sh:path water_sample_schema:bacteria ;
-            sh:pattern "^NCBITaxon:\\d+$" ] ;
-    sh:targetClass water_sample_schema:BioSample .
+            sh:path environmental_sample_schema:latitude ;
+            sh:pattern "^[-+]?([1-8]?\\d(\\.\\d+)?|90(\\.0+)?)$" ] ;
+    sh:targetClass environmental_sample_schema:EnvironmentalSample .
 

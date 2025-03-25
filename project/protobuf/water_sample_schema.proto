@@ -1,15 +1,7 @@
-// A hypothetical collection of attributes that represent a sample of water from a specific  location and depth with associated bacterial composition.
-message BioSample
+// A hypothetical collection of attributes that represent a sample from a specific  location.
+message EnvironmentalSample
  {
-  uriorcurie id = 0
-  float depth = 0
-  uriorcurie sampleType = 0
+  analysisTypeEnum analysisType = 0
   float latitude = 0
   float longitude = 0
- repeated  uriorcurie bacteria = 0
- }
-// A holder for BioSample objects
-message BioSampleCollection
- {
- repeated  bioSample entries = 0
  }

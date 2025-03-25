@@ -1,20 +1,7 @@
-type BioSample
+type EnvironmentalSample
   {
-    id: Uriorcurie!
-    depth: Float
-    sampleType: Uriorcurie
+    analysisType: AnalysisTypeEnum
     latitude: Float
     longitude: Float
-    bacteria: [Uriorcurie]
-  }
-
-type BioSampleCollection
-  {
-    entries: [BioSample]
-  }
-
-interface NamedThing
-  {
-    id: Uriorcurie!
   }
 

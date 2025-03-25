@@ -44,6 +44,24 @@ doc = ["doc8", "sphinx (>=7.0.0)", "sphinx-autobuild", "sphinx-autodoc-typehints
 test = ["dateparser (>=1.0.0,<2.0.0)", "pre-commit", "pytest", "pytest-cov", "pytest-mock", "pytz (==2021.1)", "simplejson (>=3.0.0,<4.0.0)"]
 
 [[package]]
+name = "asteval"
+version = "0.9.32"
+description = "Safe, minimalistic evaluator of python expression using ast module"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "asteval-0.9.32-py3-none-any.whl", hash = "sha256:4d0da45a15f15eeb88bb53cf4c352591ccb00f00f81f74649fd7084519adc3fe"},
+    {file = "asteval-0.9.32.tar.gz", hash = "sha256:3bef25a973d378fda21c83a38c6292c4d0d94773f49f42073e69dbb19932bb74"},
+]
+
+[package.extras]
+all = ["Sphinx", "build", "coverage", "pytest", "pytest-cov", "twine"]
+dev = ["build", "twine"]
+doc = ["Sphinx"]
+test = ["coverage", "pytest", "pytest-cov"]
+
+[[package]]
 name = "attrs"
 version = "23.2.0"
 description = "Classes Without Boilerplate"
@@ -330,6 +348,25 @@ files = [
 ]
 
 [[package]]
+name = "deepdiff"
+version = "6.7.1"
+description = "Deep Difference and Search of any Python object/data. Recreate objects by adding adding deltas to each other."
+category = "main"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "deepdiff-6.7.1-py3-none-any.whl", hash = "sha256:58396bb7a863cbb4ed5193f548c56f18218060362311aa1dc36397b2f25108bd"},
+    {file = "deepdiff-6.7.1.tar.gz", hash = "sha256:b367e6fa6caac1c9f500adc79ada1b5b1242c50d5f716a1a4362030197847d30"},
+]
+
+[package.dependencies]
+ordered-set = ">=4.0.2,<4.2.0"
+
+[package.extras]
+cli = ["click (==8.1.3)", "pyyaml (==6.0.1)"]
+optimize = ["orjson"]
+
+[[package]]
 name = "deprecated"
 version = "1.2.14"
 description = "Python @deprecated decorator to deprecate old python classes, functions or methods."
@@ -401,7 +438,7 @@ files = [
 name = "ghp-import"
 version = "2.1.0"
 description = "Copy your docs directly to the gh-pages branch."
-category = "dev"
+category = "main"
 optional = false
 python-versions = "*"
 files = [
@@ -714,7 +751,7 @@ files = [
 name = "importlib-metadata"
 version = "7.1.0"
 description = "Read metadata from Python packages"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.8"
 files = [
@@ -776,7 +813,7 @@ arrow = ">=0.15.0"
 name = "jinja2"
 version = "3.1.3"
 description = "A very fast and expressive template engine."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 files = [
@@ -936,6 +973,24 @@ files = [
 referencing = ">=0.31.0"
 
 [[package]]
+name = "lark"
+version = "1.1.9"
+description = "a modern parsing library"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+files = [
+    {file = "lark-1.1.9-py3-none-any.whl", hash = "sha256:a0dd3a87289f8ccbb325901e4222e723e7d745dbfc1803eaf5f3d2ace19cf2db"},
+    {file = "lark-1.1.9.tar.gz", hash = "sha256:15fa5236490824c2c4aba0e22d2d6d823575dcaf4cdd1848e34b6ad836240fba"},
+]
+
+[package.extras]
+atomic-cache = ["atomicwrites"]
+interegular = ["interegular (>=0.3.1,<0.4.0)"]
+nearley = ["js2py"]
+regex = ["regex"]
+
+[[package]]
 name = "linkml"
 version = "1.7.7"
 description = "Linked Open Data Modeling Language"
@@ -998,6 +1053,25 @@ linkml-runtime = ">=1.1.6"
 "ruamel.yaml" = "*"
 
 [[package]]
+name = "linkml-map"
+version = "0.1.0"
+description = ""
+category = "main"
+optional = false
+python-versions = "<4.0,>=3.9"
+files = [
+    {file = "linkml_map-0.1.0-py3-none-any.whl", hash = "sha256:102420ebcb27042b6490eb2ecf17be9c9c5ffca6542e9804f76d79987ed1ac03"},
+    {file = "linkml_map-0.1.0.tar.gz", hash = "sha256:80dd7877d34a3732563bd6b4d6906c765e548e7ae662edb957ccef3750e268c5"},
+]
+
+[package.dependencies]
+asteval = ">=0.9.29,<0.10.0"
+deepdiff = ">=6.7.1,<7.0.0"
+linkml-runtime = ">=1.7.2"
+pydantic = ">=2.5.3,<3.0.0"
+ucumvert = ">=0.1.1,<0.2.0"
+
+[[package]]
 name = "linkml-runtime"
 version = "1.7.5"
 description = "Runtime environment for LinkML, the Linked open data modeling language"
@@ -1028,7 +1102,7 @@ requests = "*"
 name = "markdown"
 version = "3.6"
 description = "Python implementation of John Gruber's Markdown."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.8"
 files = [
@@ -1047,7 +1121,7 @@ testing = ["coverage", "pyyaml"]
 name = "markupsafe"
 version = "2.1.5"
 description = "Safely add untrusted strings to HTML/XML markup."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 files = [
@@ -1117,7 +1191,7 @@ files = [
 name = "mergedeep"
 version = "1.3.4"
 description = "A deep merge function for 🐍."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6"
 files = [
@@ -1129,7 +1203,7 @@ files = [
 name = "mkdocs"
 version = "1.5.3"
 description = "Project documentation with Markdown."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 files = [
@@ -1213,6 +1287,23 @@ requests = "*"
 setuptools = ">=18.5"
 
 [[package]]
+name = "mkdocs-puml"
+version = "1.2.4"
+description = "Package that brings PlantUML to MkDocs"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "mkdocs_puml-1.2.4-py3-none-any.whl", hash = "sha256:0fceee31a9dce5363b71a1fabe563a70da97e5516bb54d0cc6c91777da78dc1b"},
+    {file = "mkdocs_puml-1.2.4.tar.gz", hash = "sha256:d0ae4d69cdbc5ec97ab7411387c1b87a5f8d0a9687e62f2131ef303b175fced9"},
+]
+
+[package.dependencies]
+markdown = ">=3.2.1,<4.0"
+mkdocs = ">=1.3,<2.0"
+requests = ">=2.27,<3.0"
+
+[[package]]
 name = "more-click"
 version = "0.1.2"
 description = "More click."
@@ -1285,6 +1376,21 @@ files = [
 et-xmlfile = "*"
 
 [[package]]
+name = "ordered-set"
+version = "4.1.0"
+description = "An OrderedSet is a custom MutableSet that remembers its order, so that every"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "ordered-set-4.1.0.tar.gz", hash = "sha256:694a8e44c87657c59292ede72891eb91d34131f6531463aab3009191c77364a8"},
+    {file = "ordered_set-4.1.0-py3-none-any.whl", hash = "sha256:046e1132c71fcf3330438a539928932caf51ddbc582496833e23de611de14562"},
+]
+
+[package.extras]
+dev = ["black", "mypy", "pytest"]
+
+[[package]]
 name = "packaging"
 version = "24.0"
 description = "Core utilities for Python packages"
@@ -1312,7 +1418,7 @@ files = [
 name = "pathspec"
 version = "0.12.1"
 description = "Utility library for gitignore style pattern matching of file paths."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.8"
 files = [
@@ -1321,10 +1427,37 @@ files = [
 ]
 
 [[package]]
+name = "pint"
+version = "0.23"
+description = "Physical quantities module"
+category = "main"
+optional = false
+python-versions = ">=3.9"
+files = [
+    {file = "Pint-0.23-py3-none-any.whl", hash = "sha256:df79b6b5f1beb7ed0cd55d91a0766fc55f972f757a9364e844958c05e8eb66f9"},
+    {file = "Pint-0.23.tar.gz", hash = "sha256:e1509b91606dbc52527c600a4ef74ffac12fff70688aff20e9072409346ec9b4"},
+]
+
+[package.dependencies]
+typing-extensions = "*"
+
+[package.extras]
+babel = ["babel (<=2.8)"]
+bench = ["pytest", "pytest-codspeed"]
+dask = ["dask"]
+mip = ["mip (>=1.13)"]
+numpy = ["numpy (>=1.19.5)"]
+pandas = ["pint-pandas (>=0.3)"]
+test = ["pytest", "pytest-benchmark", "pytest-cov", "pytest-mpl", "pytest-subtests"]
+testbase = ["pytest", "pytest-benchmark", "pytest-cov", "pytest-subtests"]
+uncertainties = ["uncertainties (>=3.1.6)"]
+xarray = ["xarray"]
+
+[[package]]
 name = "platformdirs"
 version = "4.2.0"
 description = "A small Python package for determining appropriate platform-specific dirs, e.g. a \"user data dir\"."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.8"
 files = [
@@ -1751,7 +1884,7 @@ pytest = ">=2.8.1"
 name = "python-dateutil"
 version = "2.9.0.post0"
 description = "Extensions to the standard Python datetime module"
-category = "dev"
+category = "main"
 optional = false
 python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,>=2.7"
 files = [
@@ -1830,7 +1963,7 @@ files = [
 name = "pyyaml-env-tag"
 version = "0.1"
 description = "A custom YAML tag for referencing environment variables in YAML files. "
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6"
 files = [
@@ -2485,6 +2618,27 @@ files = [
 ]
 
 [[package]]
+name = "ucumvert"
+version = "0.1.2"
+description = "Python parser & interface for UCUM (Unified Code for Units of Measure)."
+category = "main"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "ucumvert-0.1.2-py3-none-any.whl", hash = "sha256:480f0cd9315ebc5c6da3117de42296a4f8e35deb84a7f0b8719a909129afb72b"},
+    {file = "ucumvert-0.1.2.tar.gz", hash = "sha256:a7c0dab878571ed5e03abab988c46e40e40092b253d6da5041d2305e1ddecd02"},
+]
+
+[package.dependencies]
+lark = "*"
+pint = "*"
+
+[package.extras]
+dev = ["openpyxl", "pydot", "ruff", "ucumvert[lint,tests]"]
+lint = ["black"]
+tests = ["coverage", "pytest"]
+
+[[package]]
 name = "uri-template"
 version = "1.3.0"
 description = "RFC 6570 URI Template Processor"
@@ -2533,7 +2687,7 @@ zstd = ["zstandard (>=0.18.0)"]
 name = "watchdog"
 version = "4.0.0"
 description = "Filesystem events monitoring"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.8"
 files = [
@@ -2671,7 +2825,7 @@ files = [
 name = "zipp"
 version = "3.18.1"
 description = "Backport of pathlib-compatible object wrapper for zip files"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.8"
 files = [
@@ -2689,4 +2843,4 @@ docs = []
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "45ab0641686b3572e070cc39ae4a66ac504af0e079ac7e36c12fdaee200a1f11"
+content-hash = "e2617d361d1e065671dd34cf9fa72aef44cf5b09e7ed7aa47d7cb3bfb70296a1"

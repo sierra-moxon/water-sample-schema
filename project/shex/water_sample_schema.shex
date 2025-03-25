@@ -1,8 +1,7 @@
-BASE <https://w3id.org/sierra-moxon/water-sample-schema/>
+BASE <https://w3id.org/water-sample-schema/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX linkml: <https://w3id.org/linkml/>
-PREFIX schema1: <http://schema.org/>
 
 
 linkml:String xsd:string
@@ -43,31 +42,13 @@ linkml:Jsonpath xsd:string
 
 linkml:Sparqlpath xsd:string
 
-<BioSample> CLOSED {
-    (  $<BioSample_tes> (  &<NamedThing_tes> ;
-          rdf:type [ schema1:Thing ] ? ;
-          <depth> @linkml:Float ? ;
-          <sample_type> @linkml:Uriorcurie ? ;
+<EnvironmentalSample> CLOSED {
+    (  $<EnvironmentalSample_tes> (  <analysis_type> . ? ;
           <latitude> @linkml:Float ? ;
-          <longitude> @linkml:Float ? ;
-          <bacteria> @linkml:Uriorcurie *
+          <longitude> @linkml:Float ?
        ) ;
-       rdf:type [ <BioSample> ]
+       rdf:type [ <EnvironmentalSample> ] ?
     )
 }
-
-<BioSampleCollection> CLOSED {
-    (  $<BioSampleCollection_tes> <entries> @<BioSample> * ;
-       rdf:type [ <BioSampleCollection> ] ?
-    )
-}
-
-<NamedThing>  (
-    {
-       (  $<NamedThing_tes> rdf:type . * ;
-          rdf:type [ schema1:Thing ]
-       )
-    } OR @<BioSample>
-)
 
 

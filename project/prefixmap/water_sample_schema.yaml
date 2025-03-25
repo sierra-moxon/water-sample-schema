@@ -1,10 +1,6 @@
 {
-   "biolink": "https://w3id.org/biolink/",
+   "environmental_sample_schema": "https://w3id.org/water-sample-schema/",
    "example": "https://example.org/",
    "linkml": "https://w3id.org/linkml/",
-   "schema": "http://schema.org/",
-   "water_sample_schema": "https://w3id.org/sierra-moxon/water-sample-schema/",
-   "NamedThing": {
-      "@id": "schema:Thing"
-   }
+   "schema": "http://schema.org/"
 }

@@ -10,6 +10,9 @@ theme:
 plugins:
   - search
   - mermaid2
+  - plantuml:
+      puml_url: https://www.plantuml.com/plantuml/
+      num_workers: 8
 nav:
   # - Home: home.md
   - Index: index.md
