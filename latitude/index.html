@@ -317,8 +317,8 @@
 
 
 <h1 id="slot-latitude">Slot: latitude</h1>
-<p><em>The latitude of the water sample</em></p>
-<p>URI: <a href="https://w3id.org/sierra-moxon/water-sample-schema/latitude">water_sample_schema:latitude</a></p>
+<p><em>The latitude of the sample</em></p>
+<p>URI: <a href="https://w3id.org/water-sample-schema/latitude">environmental_sample_schema:latitude</a></p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="applicable-classes">Applicable Classes</h2>
@@ -332,8 +332,8 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../BioSample/">BioSample</a></td>
-<td>A hypothetical collection of attributes that represent a sample of water from...</td>
+<td><a href="../EnvironmentalSample/">EnvironmentalSample</a></td>
+<td>A hypothetical collection of attributes that represent a sample from a specif...</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -350,19 +350,19 @@
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/sierra-moxon/water-sample-schema</li>
+<li>from schema: https://w3id.org/environmental-sample-schema</li>
 </ul>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
 <pre><code class="language-yaml">name: latitude
-description: The latitude of the water sample
-from_schema: https://w3id.org/sierra-moxon/water-sample-schema
+description: The latitude of the sample
+from_schema: https://w3id.org/environmental-sample-schema
 rank: 1000
-slot_uri: water_sample_schema:latitude
+slot_uri: environmental_sample_schema:latitude
 alias: latitude
 domain_of:
-- BioSample
+- EnvironmentalSample
 range: float
 pattern: ^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?)$
 

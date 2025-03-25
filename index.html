@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#water-sample-schema" class="md-skip">
+        <a href="#environmental-sample-schema" class="md-skip">
           Skip to content
         </a>
       
@@ -379,10 +379,10 @@
   </a>
 
 
-<h1 id="water-sample-schema">water-sample-schema</h1>
-<p>Sample LinkML project setup for 2024 paper figures</p>
-<p>URI: https://w3id.org/sierra-moxon/water-sample-schema</p>
-<p>Name: water-sample-schema</p>
+<h1 id="environmental-sample-schema">environmental-sample-schema</h1>
+<p>Environmental Sample LinkML project</p>
+<p>URI: https://w3id.org/environmental-sample-schema</p>
+<p>Name: environmental-sample-schema</p>
 <h2 id="classes">Classes</h2>
 <table>
 <thead>
@@ -393,16 +393,8 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="BioSampleCollection/">BioSampleCollection</a></td>
-<td>A holder for BioSample objects</td>
-</tr>
-<tr>
-<td><a href="NamedThing/">NamedThing</a></td>
-<td>A generic grouping for any identifiable entity</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="BioSample/">BioSample</a></td>
-<td>A hypothetical collection of attributes that represent a sample of water from a specific  location and depth with associated bacterial composition.</td>
+<td><a href="EnvironmentalSample/">EnvironmentalSample</a></td>
+<td>A hypothetical collection of attributes that represent a sample from a specific  location.</td>
 </tr>
 </tbody>
 </table>
@@ -416,32 +408,16 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="bacteria/">bacteria</a></td>
-<td>The bacteria, represented by a NCBITaxon identifier, present in a sample</td>
-</tr>
-<tr>
-<td><a href="depth/">depth</a></td>
-<td>The depth of the water sample in centimeters</td>
-</tr>
-<tr>
-<td><a href="entries/">entries</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="id/">id</a></td>
-<td>A unique identifier for a thing</td>
+<td><a href="analysis_type/">analysis_type</a></td>
+<td>The type of sample</td>
 </tr>
 <tr>
 <td><a href="latitude/">latitude</a></td>
-<td>The latitude of the water sample</td>
+<td>The latitude of the sample</td>
 </tr>
 <tr>
 <td><a href="longitude/">longitude</a></td>
-<td>The longitude of the water sample</td>
-</tr>
-<tr>
-<td><a href="sample_type/">sample_type</a></td>
-<td>The type of sample</td>
+<td>The longitude of the sample</td>
 </tr>
 </tbody>
 </table>
@@ -455,7 +431,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="SampleTypeEnum/">SampleTypeEnum</a></td>
+<td><a href="AnalysisTypeEnum/">AnalysisTypeEnum</a></td>
 <td>The type of sample</td>
 </tr>
 </tbody>
